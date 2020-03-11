@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bmi Calculator | Contact Us
+{% endblock %}
+
+{% block body %}
+        <!-- Header Section -->
+        <nav class="navbar navbar2 navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><img src="static/img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+                <a class="nav-item nav-link" href="{{ url_for('calculator') }}">Bmi Calculator</a>
+                <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog</a>
+                <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contacts</a>
+            </div>
+          </div>
+        </nav>
+    <header class="header header2">
+        <!--Title Section START -->
+        <div class="container side-page-header">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-text text-center">
+                        <h2>CONTACT</h2>
+                        <div class="title-option">
+                            <a href="{{ url_for('index') }}"><i class="fa fa-home"></i> Home</a><i class="fas fa-chevron-right"></i>
+                            <span>CONTACT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Title Section End-->
+    </header>
+    <!-- HEADER END-->
+
+    <!-- Map Begin -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24112.92132811736!2d-74.20651812810036!3d40.93514309648714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fda38587e887%3A0xf03207815e338a0d!2sHaledon%2C%20NJ%2007508%2C%20USA!5e0!3m2!1sen!2sbd!4v1578120776078!5m2!1sen!2sbd" height="612" style="border:0;" allowfullscreen=""></iframe>
+        <img src="static/img/icon/location.png" alt="">
+    </div>
+    <!-- Map End -->
+
+    <!-- Form Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h4>Contacts Us</h4>
+                        <div class="contact-address">
+                            <div class="ca-widget">
+                                <div class="cw-icon">
+                                    <img src="static/img/icon/icon-1.png" alt="">
+                                </div>
+                                <div class="cw-text">
+                                    <h5>Our Location</h5>
+                                    <p>60-49 Road 11378 New York</p>
+                                </div>
+                            </div>
+                            <div class="ca-widget">
+                                <div class="cw-icon">
+                                    <img src="static/img/icon/icon-2.png" alt="">
+                                </div>
+                                <div class="cw-text">
+                                    <h5>Phone:</h5>
+                                    <p>+65 11.188.888</p>
+                                </div>
+                            </div>
+                            <div class="ca-widget">
+                                <div class="cw-icon">
+                                    <img src="static/img/icon/icon-3.png" alt="">
+                                </div>
+                                <div class="cw-text">
+                                    <h5>Mail</h5>
+                                    <p>hellocolorlib@ gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <h4>Leave A Comment</h4>
+                        <form action="/contact" method="POST">
+                            {% if message %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{message}}
+                                </div>
+                            {% endif %}
+                            {% if message2 %}
+                                <div class="alert alert-success" role="alert">
+                                    {{message2}}
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Your name" name="name" autocomplete="off">
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Your email" name="email"  autocomplete="off">
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea placeholder="Your messages" name="message"></textarea>
+                                    <button type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Form End -->
+
+    <!--Footer Begin-->
+      <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>(123) 118 9999 - (123) 118 9999</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>72 Kangnam, 45 Opal Point Suite 391</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>contactcompany@Gutim.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="static/img/footer-signup.jpg" style="background-image: url(&quot;static/img/footer-signup.jpg&quot;);">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&amp;Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p>©</p>
+                <p>
+                  This template is Coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Youssef Mohamed</a> & Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <p></p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+    <!--Footer End-->
+    <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+{% endblock %}

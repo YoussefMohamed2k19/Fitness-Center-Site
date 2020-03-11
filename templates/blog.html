@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bmi Calculator | Blog
+{% endblock %}
+
+{% block body %}
+        <!-- Header Section -->
+        <nav class="navbar navbar2 navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><img src="static/img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('calculator') }}">Bmi Calculator</a>
+              <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog</a>
+              <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contacts</a>
+            </div>
+          </div>
+        </nav>
+    <header class="header header2">
+        <!--Title Section START -->
+        <div class="container side-page-header">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-text text-center">
+                        <h2>Blog</h2>
+                        <div class="title-option">
+                            <a href="{{ url_for('index') }}"><i class="fa fa-home"></i> Home</a><i class="fas fa-chevron-right"></i>
+                            <span>Blog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Title Section End-->
+    </header>
+    <!-- HEADER END-->
+
+        <!-- Blog Section Begin-->
+        <div class="blog-section spad">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="section-title text-center">
+                    <h2>LATEST BLOG</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-1.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">10 States At Risk of Rural Hospital Closures</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-2.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Diver who helped save Thai soccer team</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-3.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Man gets life in prison for stabbing</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-4.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Russia's first male synchronised swimmer</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-5.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">NYC measles vaccination order prevails in court</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-6.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">The Week in Pictures: April 11 - 18</a></h4>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-7.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Man who pretended to be faces new charges</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-8.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">10 States At Risk of Rural Hospital Closures</a></h4>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="single-blog-item">
+                    <img src="static/img/blog/blog-9.jpg" alt="">
+                    <div class="blog-widget">
+                        <div class="bw-date">February 17, 2019</div>
+                        <a href="#" class="tag">#Gym</a>
+                    </div>
+                    <h4><a href="#">Lenny Kravitz gives Arch Digest a look inside</a></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Blog Section End-->
+
+    <!--Footer Begin-->
+      <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>(123) 118 9999 - (123) 118 9999</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>72 Kangnam, 45 Opal Point Suite 391</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>contactcompany@Gutim.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="static/img/footer-signup.jpg" style="background-image: url(&quot;static/img/footer-signup.jpg&quot;);">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&amp;Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p>©</p>
+                <p>
+                  This template is Coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Youssef Mohamed</a> & Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <p></p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+    <!--Footer End-->
+
+{% endblock %}

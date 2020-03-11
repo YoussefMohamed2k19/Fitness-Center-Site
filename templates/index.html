@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bmi Calculator
+{% endblock %}
+
+{% block body %}
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"><img src="static/img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('calculator') }}">Bmi Calculator</a>
+              <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog</a>
+              <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contacts</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Header Title -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="titlediv text-left">
+              <span>fitness elements</span>
+              <h1>bmi Calculator</h1>
+              <p class="">Gutim comes packed with the user-friendly BMI Calculator <br> shortcode which lets</p>
+              <a href="{{ url_for('about') }}" class="primary-btn">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section Begin -->
+    <section class="about-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="about-img">
+              <img src="static/img/about-pic.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-text">
+              <h2>Story About Us</h2>
+              <p class="first-para">Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium
+                  sollicitudin, nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate
+                  cursus a amet.</p>
+              <p class="second-para">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, gravida
+                  quam semper libero sit amet. Etiam rhoncus. Maecenas tempus, tellus eget condimentum
+                  rhoncus, gravida quam semper libero sit amet.</p>
+              <a href="{{ url_for('about') }}" class="primary-btn">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!--  Service Section Begin -->
+    <section class="services-section">
+      <div class="container-fluid pdl">
+        <div class="row">
+          <div class="col-lg-6 no-pd ">
+            <div class="services-pic">
+              <img src="static/img/services/service-pic.jpg" alt="">
+            </div>
+          </div>
+            <div class="col-lg-6">
+              <div class="service-items">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="services-item bg-gray">
+                              <img src="static/img/services/service-icon-1.png" alt="">
+                              <h4>Strategies</h4>
+                              <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.</p>
+                          </div>
+                          <div class="services-item bg-gray pd-b">
+                              <img src="static/img/services/service-icon-3.png" alt="">
+                              <h4>Workout</h4>
+                              <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="services-item">
+                              <img src="static/img/services/service-icon-2.png" alt="">
+                              <h4>Yoga</h4>
+                              <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.</p>
+                          </div>
+                          <div class="services-item pd-b">
+                              <img src="static/img/services/service-icon-4.png" alt="">
+                              <h4>Weight Loss</h4>
+                              <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient montes.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!--  Service Section End -->
+
+    <!--  Banner Section Begin -->
+    <section class="banner-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="banner-text">
+              <h2>Get Training  Today</h2>
+              <p>Gimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard.</p>
+              <a href="{{ url_for('contact') }}" class="primary-btn banner-btn">Contact Now</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="static/img/banner-person.png" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  Banner Section END -->
+
+    <!-- Blog Section Begin-->
+    <div class="blog-section spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title text-center">
+              <h2>LATEST BLOG</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-blog-item">
+              <img src="static/img/blog/blog-1.jpg" alt="">
+              <div class="blog-widget">
+                  <div class="bw-date">February 17, 2019</div>
+                  <a href="#" class="tag">#Gym</a>
+              </div>
+              <h4><a href="#">10 States At Risk of Rural Hospital Closures</a></h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-blog-item">
+              <img src="static/img/blog/blog-2.jpg" alt="">
+              <div class="blog-widget">
+                  <div class="bw-date">February 17, 2019</div>
+                  <a href="#" class="tag">#Gym</a>
+              </div>
+              <h4><a href="#">10 States At Risk of Rural Hospital Closures</a></h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-blog-item">
+              <img src="static/img/blog/blog-3.jpg" alt="">
+              <div class="blog-widget">
+                  <div class="bw-date">February 17, 2019</div>
+                  <a href="#" class="tag">#Gym</a>
+              </div>
+              <h4><a href="#">10 States At Risk of Rural Hospital Closures</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blog Section End-->
+
+    <!--Footer Begin-->
+      <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>(123) 118 9999 - (123) 118 9999</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>72 Kangnam, 45 Opal Point Suite 391</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>contactcompany@Gutim.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="static/img/footer-signup.jpg" style="background-image: url(&quot;static/img/footer-signup.jpg&quot;);">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&amp;Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p>©</p>
+                <p>
+                  This template is Coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Youssef Mohamed</a> & Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <p></p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+    <!--Footer End-->
+
+{% endblock %}

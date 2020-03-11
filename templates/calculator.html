@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Bmi Calculator | Calculator
+{% endblock %}
+
+{% block body %}
+        <!-- Header Section -->
+        <nav class="navbar navbar2 navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"><img src="static/img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+                <a class="nav-item nav-link" href="{{ url_for('calculator') }}">Bmi Calculator</a>
+                <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog</a>
+                <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contacts</a>
+            </div>
+          </div>
+        </nav>
+    <header class="header header2">
+        <!--Title Section START -->
+        <div class="container side-page-header">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-text text-center">
+                        <h2>Bmi Calculator</h2>
+                        <div class="title-option">
+                            <a href="{{ url_for('index') }}"><i class="fa fa-home"></i> Home</a><i class="fas fa-chevron-right"></i>
+                            <span>Bmi Calculator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Title Section End-->
+    </header>
+    <!-- HEADER END-->
+
+    <!-- CALCULATOR Begin-->
+    <section class="calculator-section spad">
+        <div class="container">
+            <div class="calculator-text">
+                <div class="section-title">
+                    <h2>Let's Begin</h2>
+                </div>
+                <form action="/calculator" method="post" class="calculator-form" >
+                    {% if message %}
+                        <div class="alert alert-danger" role="alert">
+                            {{message}}
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Name" name="name" oninvalid="this.setCustomValidity('Please Enter Your Name')" oninput="setCustomValidity('')" required autocomplete="off">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="mobile_number">Your Mobile Number</label>
+                            <input type="tel" class="form-control" id="input" placeholder="Mobile Number" name="mobile_number" pattern="01[0-9]{9}" required autocomplete="off" oninvalid="this.setCustomValidity('Please Enter Valid Mobile Number Like 01xxxxxxxxx')" oninput="setCustomValidity('')">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="area">Your Area</label>
+                            <select id="inputState" class="form-control" name="area" required>
+                                <option selected disabled>Area...</option>
+                                <option value="Nasr City">Nasr City</option>
+                                <option value="New Cairo">New Cairo</option>
+                                <option value="October">October</option>
+                                <option value="Downtown">Downtown</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="gender">Your Gender</label>
+                            <select id="inputState" class="form-control" name="gender" required>
+                                <option selected disabled>Gender...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="exercise">Your Excercise Rate</label>
+                            <select id="inputState" class="form-control" name="exercise" required>
+                                <option selected disabled>Exercise days/week...</option>
+                                <option value="0">Little or no exercise</option>
+                                <option value="1">1-3 days/week</option>
+                                <option value="2">3-5 days/week</option>
+                                <option value="3">6-7 days/week</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" class="form-control" placeholder="Weight" name="weight" required autocomplete="off">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" class="form-control" placeholder="Height" name="height" required autocomplete="off">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" placeholder="age" name="age" required autocomplete="off">
+                        </div>
+                    </div>
+                    <button type="submit" class="register-btn">Get Started</button>
+                </form>
+            </div>
+
+            <!-- RESULT BEGIN -->
+            {% if bmr %}
+                <div class="result-text">
+                    <ul>
+                        <li>You Burn {{need}} calories per day based on your exercise rate.</li>
+                        <li>Your weight range is {{weightlevel}} and your ideal weight {{idealweight}}kg.</li>
+                        <li>Your Total body water is {{tbw}} Liters and Percent of body weight {{tbwp}}%</li>
+
+                        {% if underIdealWeight %}
+                            <li>Percent under ideal body weight is {{underIdealWeight}}%.</li>
+                        {% endif %}
+
+                        {% if overIdealWeight %}
+                            <li>Percent over ideal body weight is {{overIdealWeight}}%.</li>
+                        {% endif %}
+
+                        {% if normalWeight %}
+                            <li>We recommend to maintain your weight. Get the burn going with our classes ranging from light cardio to heavy lifting. Participating gyms offer Zumba, Yoga, and more.</li>
+                        {% endif %}
+
+                        {% if meal %}
+                        <li>Your meal shouldn’t exceed {{meal}} calories.</li>
+                        <li>Here are some energy-dense foods that are perfect for gaining weight:</li>
+                        <ul>
+                            <li><strong>Nuts:</strong> Almonds, walnuts, macadamia nuts, peanuts, etc. </li>
+                            <li><strong>Dried fruit:</strong> Raisins, dates, prunes and others.</li>
+                            <li><strong>High-fat dairy:</strong> Whole milk, full-fat yogurt, cheese, cream. </li>
+                            <li><strong>Fats and oils:</strong> Extra virgin olive oil and avocado oil. </li>
+                            <li><strong>Grains:</strong> Whole grains like oats and brown rice.</li>
+                            <li><strong>Meat:</strong> Chicken, beef, pork, lamb, etc. Choose fattier cuts.</li>
+                            <li><strong>Tubers:</strong> Potatoes, sweet potatoes and yams.</li>
+                            <li>Dark chocolate, avocados, peanut butter, coconut milk, granola, trail mixes. </li>
+                        </ul>
+                        {% endif %}
+
+
+                        {% if targetCalorie %}
+                        <li>Your meal shouldn’t exceed {{targetCalorie}} calories and you will burn 500 calories at workouts.</li>
+                        {% endif %}
+                        
+                        
+                        {% if workout %}
+                        <li>Here's what you can do to lose weight:</li>
+                        <ul>
+                            <li>Eat more fruit, vegetables, nuts, and whole grains.</li>
+                            <li>Exercise, even moderately, for at least 30 minutes a day.</li>
+                            <li>Cut down your consumption of fatty and sugary foods.</li>
+                            <li>Use vegetable-based oils rather than animal-based fats.</li>
+                            <li>walk a little more, eat a little less.</li>
+                        </ul>
+                        <li>Here is our recommended eating plan:</li>
+                        <ol>
+                            <li>2:4 hours before your workout:</li>
+                            <p>
+                            Eat regular meals and make sure to include carbs and protein. If your meal is closer than 2 hours make sure to keep it low in fat and fibre. Examples of appropriate meals include pasta with meat sauce, side salad, meat or tofu stir-fry with vegetables and rice.
+                            </p>
+                            <li>1 hour before your workout:</li>
+                            <p>
+                            If you don’t have time to eat 2 hours before, eat a light snack or meal 1-hour before your workout.
+                            </p>
+                        </ol>
+
+                        <li class="table-title">This guide to burn 500 per day:</li>
+                        <div class="row">
+                            <div class="col-md-6">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Workout Name</th>
+                                    <th scope="col">Number of reps x Sets</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                    <a class="venobox" data-autoplay="true" data-type="youtube" data-vbtype="video" href="https://youtu.be/XF7df3fJn-w">
+                                        <img src="https://img.icons8.com/ios-glyphs/30/000000/pushups.png"> Pushups
+                                    </a>
+                                    </td>
+                                    <td>25 Reps x 4 Sets</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                    <a class="venobox" data-autoplay="true" data-type="youtube" data-vbtype="video" href="https://youtu.be/UpH7rm0cYbM">
+                                        <img src="https://img.icons8.com/metro/26/000000/jump-rope.png"> Jumping Jacks
+                                    </a>
+                                    </td>
+                                    <td>50 Reps x 4 Sets</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                    <a class="venobox" data-autoplay="true" data-type="youtube" data-vbtype="video" href="https://youtu.be/Sh-c39xg9xY">
+                                        <img src="https://img.icons8.com/metro/26/000000/pullups.png"> Crunches
+                                    </a>
+                                    </td>
+                                    <td>50 Reps x 3 Sets</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                    <a class="venobox" data-autoplay="true" data-type="youtube" data-vbtype="video" href="https://youtu.be/wsQGpaUIAwQ">
+                                        <img src="https://img.icons8.com/metro/26/000000/squats.png">
+                                    Squats</a>
+                                    </td> 
+                                    <td>50 Reps x 2 Sets</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+            <!-- RESULT END -->
+        </div>
+    </section>
+    <!-- CALCULAOTR End-->
+
+    <!--Footer Begin-->
+      <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>(123) 118 9999 - (123) 118 9999</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>72 Kangnam, 45 Opal Point Suite 391</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>contactcompany@Gutim.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="static/img/footer-signup.jpg" style="background-image: url(&quot;static/img/footer-signup.jpg&quot;);">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&amp;Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p>©</p>
+                <p>
+                  This template is Coded with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Youssef Mohamed</a> & Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </p>
+                <p></p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+    <!--Footer End-->
+    <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+{% endblock %}
