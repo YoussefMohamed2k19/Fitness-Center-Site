@@ -16,7 +16,7 @@ Session(app)
 
 # Set up database
 #postgres://username:password@host:5432/db
-engine = create_engine("postgres://postgres:10102000@localhost:5432/postgres")
+engine = create_engine("postgres://fscoockmdwspbw:205f5acc70dd3700006885dbe4d74adc1612838edc9cbd50cbd81c78df0ed9ec@ec2-34-206-252-187.compute-1.amazonaws.com:5432/d202lgtotpcq1k")
 db = scoped_session(sessionmaker(bind=engine))
 
 @app.route('/')
