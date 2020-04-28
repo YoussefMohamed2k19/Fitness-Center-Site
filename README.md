@@ -1,5 +1,5 @@
-# Final Project 
+# Flask Project
 
-Web Programming with Python and JavaScript
+Fitnes Center Site with Bmi Calculator
 
-Todo App connected with postgresql
+Live : https://fitness-center.herokuapp.com/
