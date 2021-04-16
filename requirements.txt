@@ -18,7 +18,7 @@ Django==2.2.10
 django-allauth==0.41.0
 django-countries==5.5
 django-crispy-forms==1.8.1
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 Flask==1.1.1
 Flask-Babel==0.12.2
 Flask-Login==0.4.1
