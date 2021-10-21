@@ -3,7 +3,7 @@ astroid==2.2.5
 atomicwrites==1.1.5
 attrs==18.1.0
 autopep8==1.5
-Babel==2.7.0
+Babel==2.9.1
 certifi==2019.9.11
 cffi==1.14.0
 chardet==3.0.4
